@@ -1,0 +1,67 @@
+<h2 class="text-center mb-5 fw-bold">🎓 All College Events</h2>
+
+<% if(events.length === 0){ %>
+
+    <div class="text-center mt-5">
+        <h4>No events available yet.</h4>
+        <a href="/listings/new" class="btn btn-warning mt-3">
+            Add First Event
+        </a>
+    </div>
+
+<% } else { %>
+
+<div class="row g-4">
+
+    <% events.forEach(event => { %>
+
+        <div class="col-md-4">
+            <div class="card shadow-lg border-0 h-100 event-card">
+
+                <img src="<%= event.image %>" 
+                     class="card-img-top"
+                     alt="Event Image">
+
+                <div class="card-body d-flex flex-column">
+
+                    <h5 class="card-title fw-bold">
+                        <%= event.name %>
+                    </h5>
+
+                    <p class="card-text text-muted">
+                        <%= event.description.substring(0, 80) %>...
+                    </p>
+
+                    <p class="mb-1">
+                        <strong>Date:</strong> 
+                        <%= new Date(event.dateTime).toDateString() %>
+                    </p>
+
+                    <p>
+                        <strong>Fee:</strong>
+                        <% if(event.registrationFee === 0){ %>
+                            <span class="badge bg-success px-3 py-2">
+                                FREE
+                            </span>
+                        <% } else { %>
+                            <span class="badge bg-danger px-3 py-2">
+                                ₹ <%= event.registrationFee %>
+                            </span>
+                        <% } %>
+                    </p>
+
+                    <a href="/events/<%= event._id %>" 
+                       class="btn btn-primary mt-auto w-100">
+                        See Details
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+
+    <% }) %>
+
+</div>
+
+<% } %>
