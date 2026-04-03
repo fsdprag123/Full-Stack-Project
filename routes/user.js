@@ -89,7 +89,7 @@ router.get("/:id/registrations", async (req, res) => {
         if (!event) {
             return res.send("Event not found");
         }
-        res.render("users/registrations.ejs", {
+        res.render("Users/registrations.ejs", {
             users: event.registration
         });
     } catch (err) {
