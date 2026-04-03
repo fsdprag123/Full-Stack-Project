@@ -1,7 +1,7 @@
 const express=require("express");
 const router = express.Router();
 const wrapAsync=require("../utils/wrapAsync.js");
-const User=require("../models/user.js");
+const User=require("../models/user");
 const Event=require("../models/event.js");
 const passport=require("passport");
 
