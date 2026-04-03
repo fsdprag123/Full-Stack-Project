@@ -4,7 +4,7 @@ if(process.env.NODE_ENV !="production"){
 
 const express = require("express");
 const mongoose = require("mongoose");
-const Event = require("./models/event");
+const Event = require("./models/event.js");
 const ExpressError=require("./utils/ExpressError.js");
 const engine = require("ejs-mate");
 const MongoStore = require('connect-mongo').default;
@@ -13,7 +13,7 @@ const path = require("path");
 const methodOverride = require("method-override");
 const session = require("express-session");
 const flash = require("connect-flash");
-const User = require("./models/user");
+const User = require("./models/user.js");
 const passport=require("passport");
 const LocalStrategy=require("passport-local");
 const userRouter=require("./routes/user.js");
