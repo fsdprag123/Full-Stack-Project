@@ -6,7 +6,7 @@ const Event=require("../models/event.js");
 const passport=require("passport");
 
 router.get("/signup", (req, res) => {
-    res.render("users/signup");
+    res.render("Users/signup");
 });
 
 router.post("/signup",wrapAsync(async (req,res)=>{
@@ -25,7 +25,7 @@ router.post("/signup",wrapAsync(async (req,res)=>{
 
 router.get("/login", (req, res) => {
     
-    res.render("users/login");
+    res.render("Users/login");
 });
 
 router.post("/login",
@@ -51,14 +51,14 @@ router.get("/logout",(req,res,next)=>{
 router.get("/profile", (req, res) => {
     const user = req.user; 
 
-    res.render("users/profile.ejs", { user });
+    res.render("Users/profile.ejs", { user });
 });
 
 router.get("/createdevents",  async (req, res) => {
     try {
         const user = await User.findById(req.user._id).populate("createdEvents");
         console.log(user);
-        res.render("users/created.ejs", { 
+        res.render("Users/created.ejs", { 
             events: user.createdEvents
         });
 
@@ -72,7 +72,7 @@ router.get("/registerevents",  async (req, res) => {
     try {
         const user = await User.findById(req.user._id).populate("registerEvents");
         console.log(user);
-        res.render("users/registeredevents.ejs", { 
+        res.render("Users/registeredevents.ejs", { 
             events: user.registerEvents,
         });
 
