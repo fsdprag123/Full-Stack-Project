@@ -1,0 +1,140 @@
+
+<div class="row justify-content-center mt-5">
+    <div class="col-lg-7 col-md-9">
+    <div class="card shadow-sm border-0 p-4">
+        <h3 class="mb-4 text-center">Create New Event</h3>
+
+        <form method="POST" action="/events" novalidate class="needs-validation" enctype="multipart/form-data">
+
+            <!-- Event Name -->
+            <div class="mb-3">
+                <label class="form-label">Event Name</label>
+                <input name="event[name]" 
+                       placeholder="Enter event name" 
+                       type="text" 
+                       class="form-control"
+                       required>
+                <div class="invalid-feedback">Please enter event name</div>
+            </div>
+
+            <!-- Theme -->
+            <div class="mb-3">
+                <label class="form-label">Theme</label>
+                <input name="event[theme]" 
+                       placeholder="Enter theme" 
+                       type="text" 
+                       class="form-control"
+                       required>
+                <div class="invalid-feedback">Please enter theme</div>
+            </div>
+
+            <!-- Image -->
+            <div class="mb-3">
+                <label class="form-label">Upload Listing Image</label>
+                <input name="event[image]" 
+    
+                       type="file" 
+                       class="form-control">
+            </div>
+
+            <!-- Date Time -->
+            <div class="mb-3">
+                <label class="form-label">Date & Time</label>
+                <input name="event[dateTime]" 
+                       type="datetime-local" 
+                       class="form-control"
+                       required>
+                <div class="invalid-feedback">Please select date and time</div>
+            </div>
+
+            <!-- Venue -->
+            <div class="mb-3">
+                <label class="form-label">Venue</label>
+                <input name="event[venue]" 
+                       placeholder="Enter venue" 
+                       type="text" 
+                       class="form-control"
+                       required>
+                <div class="invalid-feedback">Please enter venue</div>
+            </div>
+
+            <!-- Description -->
+            <div class="mb-3">
+                <label class="form-label">Description</label>
+                <textarea name="event[description]" 
+                          placeholder="Enter event description"
+                          class="form-control"
+                          rows="3"
+                          required></textarea>
+                <div class="invalid-feedback">Please enter description</div>
+            </div>
+
+            <!-- Organizer -->
+            <div class="mb-3">
+                <label class="form-label">Organizer</label>
+                <input name="event[organizer]" 
+                       placeholder="Enter organizer name" 
+                       type="text" 
+                       class="form-control"
+                       required>
+                <div class="invalid-feedback">Please enter organizer name</div>
+            </div>
+
+            <!-- Registration Fee -->
+            <div class="mb-3">
+                <label class="form-label">Registration Fee</label>
+                <input name="event[registrationFee]" 
+                       placeholder="Enter fee (if any)" 
+                       type="number" 
+                       class="form-control">
+            </div>
+
+            <!-- Prizes -->
+            <div class="mb-3">
+                <label class="form-label">Prizes & Benefits</label>
+                <textarea name="event[prizesAndBenefits]" 
+                          placeholder="Enter prizes or benefits"
+                          class="form-control"
+                          rows="2"></textarea>
+            </div>
+
+            <!-- Contact -->
+            <div class="mb-3">
+                <label class="form-label">Contact Number</label>
+                <input name="event[contactNumber]" 
+                       placeholder="Enter contact number" 
+                       type="text" 
+                       class="form-control"
+                       required>
+                <div class="invalid-feedback">Please enter contact number</div>
+            </div>
+
+            <!-- WhatsApp -->
+            <div class="mb-3">
+                <label class="form-label">WhatsApp Link</label>
+                <input name="event[whatsappLink]" 
+                       placeholder="Enter WhatsApp group link" 
+                       type="text" 
+                       class="form-control">
+            </div>
+
+            <!-- Social Media -->
+            <div class="mb-3">
+                <label class="form-label">Social Media Link</label>
+                <input name="event[socialMediaLinks]" 
+                       placeholder="Instagram / Facebook link" 
+                       type="text" 
+                       class="form-control">
+            </div>
+
+            <div class="d-grid">
+                <button class="btn btn-success">Create Event</button>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+```
+
+</div>

@@ -1,8 +1,41 @@
 const mongoose = require("mongoose");
-const passportLocalMongoose = require("passport-local-mongoose");
+const Schema = mongoose.Schema;
+const passportLocalMongoose = require("passport-local-mongoose").default;
 
-const userSchema = new mongoose.Schema({});
+const UserSchema = new Schema({
+    email: {
+        type: String,
+        required: true,
+    },
+    name: {
+        type: String,
+        required:true,
+    },
+    branch: {
+        type: String,
+        required: true,
+    },
+    year : {
+        type: Number,
+        required : true,
+    },
+    registerEvents : 
+    [
+        {
+            type : Schema.Types.ObjectId,
+            ref: "Event",
+        },
+    ],
+    
+    createdEvents :
+    [
+        {
+        type : Schema.Types.ObjectId,
+        ref: "Event",
+        }
+    ]
+});
 
-userSchema.plugin(passportLocalMongoose);
+UserSchema.plugin(passportLocalMongoose);
 
-module.exports = mongoose.model("User", userSchema);
+module.exports = mongoose.model("User", UserSchema);

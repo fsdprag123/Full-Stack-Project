@@ -1,11 +1,11 @@
-<h2 class="text-center mb-5 fw-bold">🎓 All College Events</h2>
+<h2 class="text-center mb-5 fw-bold">Events That are Redistered By You</h2>
 
-<% if(events.length === 0){ %>
+<% if(!Array.isArray(events) || events.length === 0){ %>
 
     <div class="text-center mt-5">
         <h4>No events available yet.</h4>
-        <a href="/listings/new" class="btn btn-warning mt-3">
-            Add First Event
+        <a href="/events" class="btn btn-warning mt-3">
+            ➕ Add First Event
         </a>
     </div>
 
@@ -18,24 +18,28 @@
         <div class="col-md-4">
             <div class="card shadow-lg border-0 h-100 event-card">
 
-                <img 
-                  src="<%= event.image.url %>" 
-                  class="card-img-top event-img"
-                  alt="<%= event.name %>">
+                <img src="<%= event.image || 'https://via.placeholder.com/300' %>" 
+                     class="card-img-top"
+                     style="height:200px; object-fit:cover;"
+                     alt="Event Image">
 
                 <div class="card-body d-flex flex-column">
 
                     <h5 class="card-title fw-bold">
-                        <%= event.name %>
+                        <%= event.name || "Untitled Event" %>
                     </h5>
 
                     <p class="card-text text-muted">
-                        <%= event.description.substring(0, 80) %>...
+                        <%= event.description 
+                            ? event.description.substring(0, 80) 
+                            : "No description available" %>...
                     </p>
 
                     <p class="mb-1">
                         <strong>Date:</strong> 
-                        <%= new Date(event.dateTime).toDateString() %>
+                        <%= event.dateTime 
+                            ? new Date(event.dateTime).toDateString() 
+                            : "N/A" %>
                     </p>
 
                     <p>
@@ -46,7 +50,7 @@
                             </span>
                         <% } else { %>
                             <span class="badge bg-danger px-3 py-2">
-                                ₹ <%= event.registrationFee %>
+                                ₹ <%= event.registrationFee || 0 %>
                             </span>
                         <% } %>
                     </p>

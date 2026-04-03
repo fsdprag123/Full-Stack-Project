@@ -1,0 +1,72 @@
+<h2 class="text-center mb-5 fw-bold">👥 Registered Students</h2>
+
+<% if(users.length === 0) { %>
+
+    <div class="text-center mt-5">
+        <h4>No registrations yet 😢</h4>
+        <a href="/events" class="btn btn-primary mt-3">
+            Browse Events
+        </a>
+    </div>
+
+<% } else { %>
+
+<div class="row g-4">
+
+    <% users.forEach(user => { %>
+
+        <div class="col-md-4">
+            <div class="card shadow-lg border-0 h-100 text-center p-3">
+
+                <!-- Profile Avatar -->
+                <div class="profile-img mb-3 d-flex align-items-center justify-content-center mx-auto">
+                    <%= user.name ? user.name.charAt(0).toUpperCase() : 'U' %>
+                </div>
+
+                <div class="card-body">
+
+                    <!-- Name -->
+                    <h5 class="card-title fw-bold">
+                        <%= user.name %>
+                    </h5>
+
+                    <!-- Email -->
+                    <p class="text-muted mb-1">
+                        <%= user.email %>
+                    </p>
+                    <p class="text-muted mb-1">
+                       <strong>Rollno:</strong>  <%= user.username %>
+                    </p>
+
+                    <!-- Branch -->
+                    <p class="mb-1">
+                        🎓 <strong>Branch:</strong> <%= user.branch %>
+                    </p>
+
+                    <!-- Year -->
+                    <p>
+                        📅 <strong>Year:</strong> <%= user.year %>
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+
+    <% }) %>
+
+</div>
+
+<% } %>
+
+<style>
+.profile-img {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #007bff, #6610f2);
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    border-radius: 50%;
+}
+</style>

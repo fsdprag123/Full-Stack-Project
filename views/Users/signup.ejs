@@ -1,0 +1,85 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+
+            <div class="card shadow p-4 rounded-4">
+                
+                <h1 class="text-center mb-4">Sign Up to Event Portal</h1>
+
+                <form action="/user/signup" method="post" class="needs-validation" novalidate>
+
+                    <!-- Username -->
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input 
+                            name="username"
+                            id="username"
+                            type="text"
+                            class="form-control"
+                            required
+                        />
+                        <div class="invalid-feedback">
+                            Please enter a username.
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input 
+                            name="email"
+                            id="email"
+                            type="email"
+                            class="form-control"
+                            required
+                        />
+                        <div class="invalid-feedback">
+                            Please enter a valid email.
+                        </div>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input 
+                            name="password"
+                            id="password"
+                            type="password"
+                            class="form-control"
+                            required
+                        />
+                        <div class="invalid-feedback">
+                            Please enter a password.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                      <label class="form-label">Name</label>
+                      <input name="name" type="text" class="form-control" required />
+                    </div>
+                    <!-- Branch -->
+                    <div class="mb-3">
+                        <label class="form-label">Branch</label>
+                        <input name="branch" type="text" class="form-control" required />
+                    </div>
+
+                    <!-- Year -->
+                    <div class="mb-3">
+                        <label class="form-label">Year</label>
+                        <input name="year" type="number" class="form-control" required />
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="d-grid">
+                        <button class="btn btn-dark btn-lg rounded-3">
+                            Sign Up
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>

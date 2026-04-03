@@ -1,0 +1,149 @@
+<div class="container mt-5 mb-5">
+
+    <div class="card shadow-lg border-0">
+
+        <div class="card-body p-4">
+
+            <h2 class="mb-4 text-center">Edit Event</h2>
+
+            <form action="/events/<%= event._id %>?_method=PUT" method="POST"  enctype="multipart/form-data">
+
+                <!-- Event Name -->
+                <div class="mb-3">
+                    <label class="form-label">Event Name</label>
+                    <input type="text"
+                           name="event[name]"
+                           class="form-control"
+                           value="<%= event.name %>"
+                           required>
+                </div>
+
+                <!-- Theme -->
+                <div class="mb-3">
+                    <label class="form-label">Theme</label>
+                    <input type="text"
+                           name="event[theme]"
+                           class="form-control"
+                           value="<%= event.theme %>"
+                           required>
+                </div>
+
+
+                 <div class="mb-3">
+                    Original Event Image
+                    <br>
+                   <img src="<%=originalImageUrl %> ">
+                </div>
+
+                <!-- Image -->
+               <div class="mb-3">
+                <label class="form-label">Upload New Image</label>
+                <input 
+                    type="file"
+                    name="event[image]"
+                    class="form-control">
+                </div>
+
+                <!-- Date Time -->
+                <div class="mb-3">
+                    <label class="form-label">Date & Time</label>
+                    <input type="datetime-local"
+                           name="event[dateTime]"
+                           class="form-control"
+                           required>
+                </div>
+
+                <!-- Venue -->
+                <div class="mb-3">
+                    <label class="form-label">Venue</label>
+                    <input type="text"
+                           name="event[venue]"
+                           class="form-control"
+                           value="<%= event.venue %>"
+                           required>
+                </div>
+
+                <!-- Description -->
+                <div class="mb-3">
+                    <label class="form-label">Description</label>
+                    <textarea name="event[description]"
+                              class="form-control"
+                              rows="4"
+                              required><%= event.description %></textarea>
+                </div>
+
+                <!-- Organizer -->
+                <div class="mb-3">
+                    <label class="form-label">Organizer</label>
+                    <input type="text"
+                           name="event[organizer]"
+                           class="form-control"
+                           value="<%= event.organizer %>"
+                           required>
+                </div>
+
+                <!-- Registration Fee -->
+                <div class="mb-3">
+                    <label class="form-label">Registration Fee</label>
+                    <input type="number"
+                           name="event[registrationFee]"
+                           class="form-control"
+                           value="<%= event.registrationFee %>">
+                </div>
+
+                <!-- Prizes -->
+                <div class="mb-3">
+                    <label class="form-label">Prizes & Benefits</label>
+                    <textarea name="event[prizesAndBenefits]"
+                              class="form-control"
+                              rows="3"><%= event.prizesAndBenefits %></textarea>
+                </div>
+
+                <!-- Contact -->
+                <div class="mb-3">
+                    <label class="form-label">Contact Number</label>
+                    <input type="text"
+                           name="event[contactNumber]"
+                           class="form-control"
+                           value="<%= event.contactNumber %>"
+                           required>
+                </div>
+
+                <!-- WhatsApp -->
+                <div class="mb-3">
+                    <label class="form-label">WhatsApp Link</label>
+                    <input type="text"
+                           name="event[whatsappLink]"
+                           class="form-control"
+                           value="<%= event.whatsappLink %>">
+                </div>
+
+                <!-- Social Media -->
+                <div class="mb-3">
+                    <label class="form-label">Social Media Links (comma separated)</label>
+                    <input type="text"
+                           name="event[socialMediaLinks]"
+                           class="form-control"
+                           value="<%= event.socialMediaLinks %>">
+                </div>
+
+                <!-- Buttons -->
+                <div class="d-flex justify-content-between mt-4">
+
+                    <a href="/events/<%= event._id %>" 
+                       class="btn btn-outline-secondary">
+                        Cancel
+                    </a>
+
+                    <button class="btn btn-success">
+                        Update Event
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>

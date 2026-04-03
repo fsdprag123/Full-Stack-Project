@@ -14,8 +14,27 @@
                     <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Add Event</a>
+                    <a class="nav-link" href="/events/new">Add Event</a>
                 </li>
+                <% if(!currUser){%>
+                   <li>
+                    <a class="nav-link" href="/user/login">Login</a> 
+                   </li>
+                   <li>
+                    <a class="nav-link" href="/user/SignUp">SignUp</a> 
+                   </li>
+                  
+                <%}%>
+                <% if(currUser) { %>
+                   <li>
+                    <a class="nav-link" href="/user/profile">Profile</a> 
+                   </li>
+                   <li>
+                      <a class="nav-link" href="/user/logout">Log out</a>
+                    </li>  
+                <%}%>
+
+                
             </ul>
         </div>
     </div>

@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
 const eventSchema = new mongoose.Schema({
 
@@ -14,8 +15,8 @@ const eventSchema = new mongoose.Schema({
     },
 
     image: {
-    type: String,
-    default: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30"
+       url:String,
+       filename:String,
     },
 
     dateTime: {
@@ -63,8 +64,22 @@ const eventSchema = new mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now
-    }
+    },
+   
+    owner:{
+        type: Schema.Types.ObjectId,
+        ref:"User",
+    },
+   
+    registration:[
+        {
+             type: Schema.Types.ObjectId,
+             ref:"User", 
+        }
+    ]
 
 });
+
+
 
 module.exports = mongoose.model("Event", eventSchema);
